@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercício 8</title>
+<h1>Sequência de número Fibonacci</h1>
+<script>
+    var arrSequencia    = [0, 1];
+    var sequencia       = 0;
+    var numPares        = 0;
+    var numImpares      = 0;
+    var somaPares       = 0;
+    var proximoElemento = 0;
+    do {
+      sequencia++
+      proximoElemento = arrSequencia[sequencia] + arrSequencia[sequencia-1];
+      proximoElemento < 50000 ? (
+        arrSequencia.push(proximoElemento),
+        proximoElemento % 2 == 0 ? 
+          ( numPares  ++ , 
+            somaPares += proximoElemento )
+          : numImpares ++ )
+      : false;
+      } while  (proximoElemento < 50000);
+    document.write("Sequencia de números : " + arrSequencia.join(' / ') + "<br><br>");
+    document.write("Somatórios dos números pares : " + somaPares)
+  </script>
+</head>
+</html>
